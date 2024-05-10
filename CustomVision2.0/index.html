@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto de predicción de imágenes con Azure Cognitive Services</title>
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Proyecto de predicción de imágenes con Azure Cognitive Services</h1>
-    <input type="file" accept="image/*" id="fileInput">
-    <button onclick="predict()">Predecir</button>
-    <div id="predictionResult"></div>
-
+    <div class="chat-container">
+        <h1>Chat Bot</h1>
+        <div id="chatBox"></div>
+        <form onsubmit="event.preventDefault(); askQuestion()">
+            <input type="text" id="questionInput" placeholder="Enviar mensaje">
+            <button onclick="submitQuestion()">Enviar</button>
+            <button onclick="predict()" id="predictButton" style="display: none;">Enviar</button>
+        </form>        
+        <input type="file" accept="image/*" id="fileInput">
+        <div id="predictionResult"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
